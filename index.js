@@ -3,6 +3,9 @@ import express from 'express';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
 
+
+import {users} from "./src/db/users.js"
+
 //Create an express application
 const app = express();
 
@@ -26,7 +29,15 @@ app.use(express.static(join(__dirname,'public')));
 app.listen(PORT,()=>console.log(`http://localhost:${PORT}`))
 
 
+
 /* Get response from the server */
-app.get('/ping', (req, res)=>{
-  res.status(200).send('<h1>¡Pong!</h1>')
+app.get('/welcome', (req, res)=>{
+  res.status(200).send(`<section>
+                          <h2 style="text-align:center">Test endpoint route</h2>
+                        </section>`)
+})
+
+/* Get response from the server */
+app.get('/users', (req, res)=>{
+  res.status(200).json(users)
 })
