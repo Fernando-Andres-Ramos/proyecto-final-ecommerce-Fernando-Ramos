@@ -15,6 +15,8 @@ const PORT = process.env.PORT || 8080;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
  
+console.log(__filename)
+console.log(__dirname)
 
 // Server static files from the 'public' directory
 app.use(express.static(join(__dirname,'public')));
