@@ -3,6 +3,7 @@ import express from 'express';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
 import router from "./src/routes/routes.js"
+import cors from 'cors'
 
 //Create an express application
 const app = express();
@@ -23,12 +24,14 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 /* Usde router */
 app.use("/",router)
 
+app.use(cors())
+
 /* Initial message from server */
 app.listen(PORT,()=>console.log(`http://localhost:${PORT}`))
 
-/* Get response from the server */
-app.get('/welcome', (req, res)=>{
-  res.status(200).send(`<section>
-                          <h2 style="text-align:center">Test endpoint route</h2>
-                        </section>`)
-})
+/* const corsOptions = {
+  origin:['www.example.com'],
+  methods:['GET,POST,PUT,DELETE'],
+  allowedHeaders:['Content-Type','Authorization'],
+  credentials:true
+} */
