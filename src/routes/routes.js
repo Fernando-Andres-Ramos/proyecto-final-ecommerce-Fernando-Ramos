@@ -1,11 +1,9 @@
 import { Router } from "express"
-import users from "./users.js"
+import products from "./products.routes.js"
 
 const router = Router()
 
-
-
-router.use('/users',users)
+router.use('/products',products)
 router.all('/{*splat}',(req,res)=>{
   res.status(404).json({Error:404,Description:`Ruta no implementada`})
 })

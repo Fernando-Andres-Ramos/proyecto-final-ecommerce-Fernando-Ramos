@@ -21,14 +21,15 @@ app.use(express.static(join(__dirname,'public')));
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-/* Usde router */
-app.use("/",router)
-
+app.use("/api",router)
 app.use(cors())
 
 /* Initial message from server */
 app.listen(PORT,()=>console.log(`http://localhost:${PORT}`))
 
+app.use((req,res,next)=>{
+  res.status(404).json({Error:404,Description:`Ruta no implementada`})
+})
 /* const corsOptions = {
   origin:['www.example.com'],
   methods:['GET,POST,PUT,DELETE'],
