@@ -4,6 +4,7 @@ import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
 import router from "./src/routes/routes.js"
 import cors from 'cors'
+import bodyParser from 'body-parser';
 
 //Create an express application
 const app = express();
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 
 app.use("/api",router)
 app.use(cors())
+app.use(bodyParser.json())
 
 /* Initial message from server */
 app.listen(PORT,()=>console.log(`http://localhost:${PORT}`))
