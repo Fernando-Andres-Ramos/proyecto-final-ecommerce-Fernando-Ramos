@@ -7,3 +7,7 @@
 #### Tecnologias: 
   * #### Node.js
   * #### Express.js
+  * #### Cors
+  * #### Dotenv
+  * #### Firebase
+  * #### Jsonwebtoken

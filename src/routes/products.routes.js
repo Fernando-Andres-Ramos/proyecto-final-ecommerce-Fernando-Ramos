@@ -1,4 +1,5 @@
 import {Router} from "express"
+import { authentication } from "../middlewares/authentication.js";
 import { 
   getAllProducts,
   getProductsByID,
@@ -10,11 +11,11 @@ import {
 const products = Router()
 products.route("/")
   .get(getAllProducts)
-  .post(createProduct)
+  .post(authentication,createProduct)
 
 products.route("/:id")
   .get(getProductsByID)
-  .put(updateProduct)
-  .delete(deleteProduct)
+  .put(authentication,updateProduct)
+  .delete(authentication,deleteProduct)
 
 export default products
