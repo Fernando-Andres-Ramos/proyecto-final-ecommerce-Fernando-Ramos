@@ -1,12 +1,18 @@
-import { v4 as uuidv4 } from 'uuid';
 import { 
-  getAllProducts,
-  getProductByID,
-  createProduct,
-  updateProduct,
-  deleteProductById
-} from "../models/products.models.js";
+  getAllProducts, 
+  createProduct, 
+  getProductByID,  
+  updateProduct, 
+  deleteProductById}  
+from '../models/products.models.firestore.js';
 
+/* import {
+  getAllProducts, 
+  createProduct, 
+  getProductByID, 
+  updateProduct, 
+  deleteProductById} 
+from "../models/products.models.js"; */
 
 export const getAll = async () => {
   return await getAllProducts()
@@ -17,7 +23,7 @@ export const findById = async (id) => {
 }
 
 export const createItem = async (data) => {
-  return await createProduct({...data,id:uuidv4()})
+  return await createProduct(data)
 }
 
 export const updateItem = async (id,data) => {

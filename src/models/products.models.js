@@ -1,5 +1,7 @@
 import fs from 'fs'
 import path from 'path'
+import { v4 as uuidv4 } from 'uuid';
+
 
 const __dirname = import.meta.dirname
 const dataPath = path.join(__dirname, '../data/products.json')
@@ -33,7 +35,7 @@ export async function getProductByID (idToFind){
 export async function createProduct (data){
   try{
     const productsDB = await getAllProducts()
-    productsDB.push(data)
+    productsDB.push({...data,id:uuidv4()})
     fs.writeFile(dataPath, JSON.stringify(productsDB), (err)=>{
     if(err)
       throw(`Error al guardar el dato`)
