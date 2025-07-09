@@ -8,7 +8,7 @@ const router = Router()
 router.use('/products', products)
 router.use('/login', auth)
 router.all('/{*splat}',(req,res)=>{
-  res.status(404).json({Error:404,Description:`Ruta no implementada`})
+  res.status(404).json({Error:404,Descripción:`Ruta no implementada`})
 })
 
 export default router
