@@ -3,18 +3,18 @@
 ## Autor: Fernando Ramos
 ## Comisión: 25023
  
-#### Descripción:
-##### *Este repositorio contiene un servidor backend construido como parte de un curso práctico. Utiliza Node.js, Express.js para el manejo de rutas y está conectado a una base de datos en Firebase Firestore. El sistema de autenticación está implementado con JWT y está diseñado para testearse fácilmente desde Postman.*
+### Descripción:
+#### *Este repositorio contiene un servidor backend construido como parte de un curso práctico. Utiliza Node.js, Express.js para el manejo de rutas y está conectado a una base de datos en Firebase Firestore. El sistema de autenticación está implementado con JWT y está diseñado para testearse fácilmente desde Postman.*
 
-#### Tecnologias: 
-  * ##### Node.js
-  * ##### Express.js
-  * ##### Cors
-  * ##### Dotenv
-  * ##### Firebase/Firestore
-  * ##### Jsonwebtoken
+### Tecnologias: 
+  * #### Node.js
+  * #### Express.js
+  * #### Cors
+  * #### Dotenv
+  * #### Firebase/Firestore
+  * #### Jsonwebtoken
 
-#### Estructura del Proyecto:
+### Estructura del Proyecto:
     📁 src/
     ┣ 📁 routes/         # Definición de endpoints
     ┣ 📁 controllers/    # Lógica para manejar las peticiones
@@ -24,23 +24,23 @@
     ┗ 📁 utils/          # Funciones auxiliares
 
 
-#### Instalación:
-  * ##### Clonar el repositorio:
+### Instalación:
+  * #### Clonar el repositorio:
     - git clone https://github.com/Fernando-Andres-Ramos/proyecto-final-ecommerce-Fernando-Ramos.git
     - cd proyecto-final-ecommerce-Fernando-Ramos
-  * ##### Instalar dependencias:
+  * #### Instalar dependencias:
     - npm install
-  * ##### Configurar variables de entorno en .env:
+  * #### Configurar variables de entorno en .env:
     - FIREBASE_API_KEY=...
     - FIREBASE_PROJECT_ID=...
     - JWT_SECRET=tu_clave_secreta
-  * ##### Iniciar el servidor:
+  * #### Iniciar el servidor:
     - npm run dev
 
-#### Uso:
-  ##### *Para su utilización en POSTMAN deberas acceder a la ruta /api/login con metodo POST y obtener un token JWT, dicho token. Debés incluir el token en el encabezado Authorization: Bearer <token> para acceder a rutas protegidas (POST, UPDATE, DELETE) de productos.*
+### Uso:
+  #### *Para su utilización en POSTMAN deberas acceder a la ruta /api/login con metodo POST y obtener un token JWT, dicho token. Debés incluir el token en el encabezado Authorization: Bearer <token> para acceder a rutas protegidas (POST, UPDATE, DELETE) de productos.*
 
-#### Endpoints disponibles:
+### Endpoints disponibles:
 
 | Método  | Endpoint               | Autorización | Uso          | Ejemplo de petición |
 |---------|------------------------|--------------|--------------|----------------------|
